@@ -94,34 +94,56 @@ export default function Home() {
               safeguarded and elevated.
             </p>
 
-            <div className="pt-8">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=mohiudin7174@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <button className="relative bg-white hover:cursor-pointer overflow-hidden group rounded-full border border-gray-700 px-16 py-4">
-                  {/* Text */}
-                  <span className="relative z-10 text-lg font-light text-black hover:text-white transition-colors duration-300">
-                    Book Now
-                  </span>
-
-                  {/* Water Fill Layer */}
-                  <span
-                    className="
-          absolute inset-0 
-          bg-gray-900 
-          translate-y-full 
-          group-hover:translate-y-0 
-          transition-transform 
-          duration-500 
-          ease-out
+           <div className="pt-8">
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=mohiudin7174@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block"
+  >
+    <button
+      className="
+        relative bg-white hover:cursor-pointer overflow-hidden group 
+        rounded-full border border-gray-700 
+        px-16 py-4 
+      "
+    >
+      {/* Normal Text */}
+      <span
+        className="
+          relative z-10 block text-lg font-light text-black 
+          transition-all duration-500
+          group-hover:translate-y-[-100%] group-hover:opacity-0
         "
-                  />
-                </button>
-              </a>
-            </div>
+      >
+        Book Now
+      </span>
+
+      {/* Hover Text */}
+      <span
+        className="
+          absolute inset-0 flex items-center justify-center
+          text-lg font-light text-white
+          translate-y-full group-hover:translate-y-0 
+          transition-transform duration-500 ease-out
+          z-10
+        "
+      >
+        Book Now
+      </span>
+
+      {/* Background Fill */}
+      <span
+        className="
+          absolute inset-0 bg-gray-900 
+          translate-y-full group-hover:translate-y-0
+          transition-transform duration-500 ease-out
+        "
+      />
+    </button>
+  </a>
+</div>
+
           </div>
         </div>
       </div>
@@ -162,29 +184,55 @@ export default function Home() {
               </div>
 
               {/* Button */}
-              <div className="pt-8">
-                <Link href="/about" className="inline-block">
-                  <button className="relative overflow-hidden group rounded-full border border-gray-700 px-8 py-4">
-                    {/* Text */}
-                    <span className="relative z-10 text-lg font-light text-black hover:cursor-pointer hover:text-white transition-colors duration-300">
-                      Learn More
-                    </span>
-
-                    {/* Water Fill Layer */}
-                    <span
-                      className="
-        absolute inset-0 
-        bg-gray-900 
-        translate-y-full 
-        group-hover:translate-y-0 
-        transition-transform 
-        duration-500 
-        ease-out
+              <div className="pt-8 hover:cursor-pointer">
+  <Link href="/about" className="inline-block">
+    <button
+      className="
+        relative overflow-hidden hover:cursor-pointer group 
+        rounded-full border border-gray-700 
+        px-8 py-4 
+        font-light 
+        transition-colors duration-300
       "
-                    />
-                  </button>
-                </Link>
-              </div>
+    >
+      {/* ORIGINAL TEXT (visible normally, disappears on hover) */}
+      <span
+        className="
+          relative z-10 block 
+          text-black
+          transition-all duration-500
+          group-hover:translate-y-[-100%] group-hover:opacity-0
+        "
+      >
+        Learn More
+      </span>
+
+      {/* HOVER TEXT (starts below, slides up into center) */}
+      <span
+        className="
+          absolute inset-0 flex items-center justify-center
+          text-white
+          translate-y-full group-hover:translate-y-0
+          transition-transform duration-500 ease-out
+          z-10
+        "
+      >
+        Learn More
+      </span>
+
+      {/* Background Fill Layer */}
+      <span
+        className="
+          absolute inset-0 
+          bg-gray-900 
+          translate-y-full 
+          group-hover:translate-y-0 
+          transition-transform duration-500 ease-out
+        "
+      />
+    </button>
+  </Link>
+</div>
             </div>
           </div>
         </div>

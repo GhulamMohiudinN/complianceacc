@@ -12,13 +12,13 @@ const Footer = () => {
           {/* Logo / Name */}
           <Link
             href="/"
-            className="text-xl font-light text-gray-800 hover:text-black transition-colors duration-200"
+            className="text-xl font-semibold text-gray-800 hover:text-black transition-colors duration-200"
           >
             Compliance Accountants
           </Link>
 
           {/* Footer Nav */}
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          {/* <div className="flex space-x-6 mt-4 md:mt-0">
             <Link 
               href="/services" 
               className="text-gray-700 hover:text-gray-900 font-light italic transition-colors duration-200"
@@ -39,7 +39,7 @@ const Footer = () => {
             >
               Contact
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section */}

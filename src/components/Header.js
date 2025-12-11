@@ -20,7 +20,7 @@ const Header = ({ activePage = '' }) => {
           <div className="flex items-center">
             <Link 
               href="/" 
-              className="text-xl md:text-2xl font-light text-gray-800 hover:text-black transition-colors duration-200"
+              className="text-xl md:text-2xl font-semibold text-gray-800 hover:text-black transition-colors duration-200"
             >
               Compliance Accountants
             </Link>

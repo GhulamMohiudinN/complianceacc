@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
     },
     {
       id: 2,
-      title: "Financial Auditing Excellence",
+      title: "Accounting Services",
       description:
         "Rigorous auditing services that provide transparent insights into your financial operations, enhancing credibility and stakeholder confidence.",
       icon: "🔍",
@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-2xl font-semibold sm:text-3xl md:text-5xl  text-gray-900 leading-tight">
-                    Featured Products
+                    Featured Services
                   </h2>
                   {/* <div className="w-32 h-1 bg-gradient-to-r from-gray-900 to-gray-300 mt-4" /> */}
                 </div>
@@ -68,29 +68,57 @@ const FeaturedProducts = () => {
             </div>
 
             {/* Button */}
-            <div className="pt-8">
-              <Link href="/services" className="inline-block">
-                <button className="relative overflow-hidden group rounded-full border border-gray-700 px-8 py-4">
-                  {/* Text */}
-                  <span className="relative z-10 text-lg font-light text-black hover:cursor-pointer hover:text-white transition-colors duration-300">
-                    Explore All Services
-                  </span>
-
-                  {/* Water Fill Layer */}
-                  <span
-                    className="
-        absolute inset-0 
-        bg-gray-900 
-        translate-y-full 
-        group-hover:translate-y-0 
-        transition-transform 
-        duration-500 
-        ease-out
+  <div className="pt-8 hover:cursor-pointer">
+  <Link href="/services" className="inline-block">
+    <button
+      className="
+        relative overflow-hidden hover:cursor-pointer group 
+        rounded-full border border-gray-700 
+        px-8 py-4 
+        font-light 
+        transition-colors duration-300
       "
-                  />
-                </button>
-              </Link>
-            </div>
+    >
+      {/* ORIGINAL TEXT (visible normally, disappears on hover) */}
+      <span
+        className="
+          relative z-10 block 
+          text-black
+          transition-all duration-500
+          group-hover:translate-y-[-100%] group-hover:opacity-0
+        "
+      >
+        Explore All Services
+      </span>
+
+      {/* HOVER TEXT (starts below, slides up into center) */}
+      <span
+        className="
+          absolute inset-0 flex items-center justify-center
+          text-white
+          translate-y-full group-hover:translate-y-0
+          transition-transform duration-500 ease-out
+          z-10
+        "
+      >
+        Explore All Services
+      </span>
+
+      {/* Background Fill Layer */}
+      <span
+        className="
+          absolute inset-0 
+          bg-gray-900 
+          translate-y-full 
+          group-hover:translate-y-0 
+          transition-transform duration-500 ease-out
+        "
+      />
+    </button>
+  </Link>
+</div>
+
+
           </div>
         </div>
       </div>
