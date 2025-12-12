@@ -50,7 +50,12 @@ const FeaturedProducts = () => {
               {cards.map((card) => (
                 <div
                   key={card.id}
-                  className="group bg-white rounded-xl p-6 shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200"
+                  className="
+  group bg-white rounded-xl p-6 shadow-lg hover:cursor-pointer
+  transition-all duration-300 transform
+  border border-gray-100 hover:border-gray-200
+  hover:-translate-y-1 hover:shadow-xl
+"
                 >
                   <div className="flex items-start space-x-4 mb-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center">
@@ -68,57 +73,55 @@ const FeaturedProducts = () => {
             </div>
 
             {/* Button */}
-  <div className="pt-8 hover:cursor-pointer">
-  <Link href="/services" className="inline-block">
-    <button
-      className="
+            <div className="pt-8 hover:cursor-pointer">
+              <Link href="/services" className="inline-block">
+                <button
+                  className="
         relative overflow-hidden hover:cursor-pointer group 
         rounded-full border border-black hover:border-[#93c67c] 
         px-8 py-4 
         font-light 
         transition-colors duration-300
       "
-    >
-      {/* ORIGINAL TEXT (visible normally, disappears on hover) */}
-      <span
-        className="
+                >
+                  {/* ORIGINAL TEXT (visible normally, disappears on hover) */}
+                  <span
+                    className="
           relative z-10 block 
           text-black
           transition-all duration-500
           group-hover:translate-y-[-100%] group-hover:opacity-0
         "
-      >
-        Explore All Services
-      </span>
+                  >
+                    Explore All Services
+                  </span>
 
-      {/* HOVER TEXT (starts below, slides up into center) */}
-      <span
-        className="
+                  {/* HOVER TEXT (starts below, slides up into center) */}
+                  <span
+                    className="
           absolute border-[#93c67c] inset-0 flex items-center justify-center
           text-white
           translate-y-full group-hover:translate-y-0
           transition-transform duration-500 ease-out
           z-10
         "
-      >
-        Explore All Services
-      </span>
+                  >
+                    Explore All Services
+                  </span>
 
-      {/* Background Fill Layer */}
-      <span
-        className="
+                  {/* Background Fill Layer */}
+                  <span
+                    className="
           absolute inset-0 
           bg-[#93c67c]
           translate-y-full 
           group-hover:translate-y-0 
           transition-transform duration-500 ease-out
         "
-      />
-    </button>
-  </Link>
-</div>
-
-
+                  />
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

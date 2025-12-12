@@ -17,6 +17,7 @@ import {
   FaChevronLeft,
   FaChevronRight
 } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,32 +25,88 @@ import Logo from "@/assists/logo.png";
 import logoB from "@/assists/logo-black.png"
 
 export default function page() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+
+  const services = [
+    {
+      Icon: FaUserTie,
+      title: "Business Advisory",
+      desc: "Strategic advisory tailored to improve your organization's direction and financial clarity.",
+    },
+    {
+      Icon: FaBalanceScale,
+      title: "Audit & Assurance",
+      desc: "Precision-driven and assurance ensuring integrity, accuracy, and compliance.",
+    },
+    {
+      Icon: FaRegChartBar,
+      title: "Financial Reporting",
+      desc: "Robust reporting structures that ensure transparency and informed decision-making.",
+    },
+    {
+      Icon: FaClipboardCheck,
+      title: "Compliance Management",
+      desc: "Comprehensive compliance frameworks aligned with local and international standards.",
+    },
+    {
+      Icon: FaCalculator,
+      title: "Accounting Services",
+      desc: "End-to-end accounting solutions designed for accuracy, structure, and operational efficiency.",
+    },
+    {
+      Icon: FaRegLightbulb,
+      title: "Strategy & Consulting",
+      desc: "Tailored consulting programs to help businesses thrive with clarity and long-term vision.",
+    },
+    {
+      Icon: FaBuilding,
+      title: "Corporate Structuring",
+      desc: "Optimize your corporate structure for financial control, tax efficiency, and scalability.",
+    },
+    {
+      Icon: FaFileInvoiceDollar,
+      title: "Taxation Services",
+      desc: "Complete tax planning, filing, and compliance services for companies and individuals.",
+    },
+    {
+      Icon: FaChartPie,
+      title: "Financial Analysis",
+      desc: "Data-driven financial evaluations designed to strengthen your decision-making process.",
+    },
+  ];
+ 
+
+
+  const toggleCard = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
+
   return (
     <>
       <Header activePage="services"/>
 
       {/* SERVICES SECTION */}
-      <section className="py-20 px-6 sm:px-6 lg:px-22 bg-white">
+       <section className="py-20 px-6 lg:px-22 bg-white">
         <div className="max-w-7xl mx-auto">
-
-          {/* Section Title */}
           <h2 className="text-3xl lg:text-4xl font-semibold tracking-wide text-center mb-14">
             Our Services
           </h2>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {/* Accordion Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
 
-            <ServiceCard Icon={FaUserTie} title="Business Advisory" desc="Strategic advisory tailored to improve your organization's direction and financial clarity." />
-            <ServiceCard Icon={FaBalanceScale} title="Audit & Assurance" desc="Precision-driven auditing and assurance ensuring integrity, accuracy, and compliance." />
-            <ServiceCard Icon={FaRegChartBar} title="Financial Reporting" desc="Robust reporting structures that ensure transparency and informed decision-making." />
-            <ServiceCard Icon={FaClipboardCheck} title="Compliance Management" desc="Comprehensive compliance frameworks aligned with local and international standards." />
-            <ServiceCard Icon={FaCalculator} title="Accounting Services" desc="End-to-end accounting solutions designed for accuracy, structure, and operational efficiency." />
-            <ServiceCard Icon={FaRegLightbulb} title="Strategy & Consulting" desc="Tailored consulting programs to help businesses thrive with clarity and long-term vision." />
-            <ServiceCard Icon={FaBuilding} title="Corporate Structuring" desc="Optimize your corporate structure for financial control, tax efficiency, and scalability." />
-            <ServiceCard Icon={FaFileInvoiceDollar} title="Taxation Services" desc="Complete tax planning, filing, and compliance services for companies and individuals." />
-            <ServiceCard Icon={FaChartPie} title="Financial Analysis" desc="Data-driven financial evaluations designed to strengthen your decision-making process." />
-
+            {services.map((item, index) => (
+              <ServiceCard
+                key={index}
+                Icon={item.Icon}
+                title={item.title}
+                desc={item.desc}
+                isOpen={openIndex === index}
+                onClick={() => toggleCard(index)}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -99,72 +156,39 @@ export default function page() {
 
 
 /* ========== REUSABLE CARD COMPONENT ========== */
-function ServiceCard({ Icon, title, desc }) {
+function ServiceCard({ Icon, title, desc, isOpen, onClick }) {
   return (
-    <div
-      className="
-        group p-8 rounded-xl border border-gray-200 shadow-sm 
-        transition-all duration-300 bg-white
-        hover:-translate-y-2 hover:shadow-xl
-      "
-    >
-      {/* Icon */}
-      <div className="w-16 h-16 bg-[#93c67c] rounded-full flex items-center justify-center mb-6">
-        <Icon className="text-white text-3xl" />
-      </div>
+    <div className="w-full max-w-md mx-auto border border-gray-200 rounded-xl bg-white shadow-sm p-6 transition-all duration-300">
+      {/* Top Row */}
+      <button
+        onClick={onClick}
+        className="flex items-center justify-between w-full cursor-pointer"
+      >
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center">
+            <Icon className="text-white text-xl" />
+          </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-semibold mb-4 tracking-wide">
-        {title}
-      </h3>
+          <h3 className="text-lg font-semibold tracking-wide">{title}</h3>
+        </div>
+
+        {/* Arrow Icon */}
+        <FaArrowDown
+          className={`text-[#93c67c] text-lg transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
 
       {/* Description */}
-      <p className="text-gray-600 leading-relaxed mb-10">
-        {desc}
-      </p>
-
-      {/* Button */}
-      <Link href="/contact" className="inline-block">
-        <button
-          className="
-            relative overflow-hidden hover:cursor-pointer group/button 
-            rounded-full border border-gray-700 px-8 py-3 hover:border-[#93c67c]
-            bg-white text-sm font-light
-          "
-        >
-          {/* Normal Text */}
-          <span
-            className="
-              relative z-10 block text-black
-              transition-all duration-500
-              group-hover/button:-translate-y-full group-hover/button:opacity-0
-            "
-          >
-            Learn More
-          </span>
-
-          {/* Hover Text */}
-          <span
-            className="
-              absolute inset-0 flex items-center justify-center 
-              text-white text-sm z-10
-              translate-y-full group-hover/button:translate-y-0 
-              transition-transform duration-500 ease-out
-            "
-          >
-            Learn More
-          </span>
-
-          {/* Background Fill */}
-          <span
-            className="
-              absolute inset-0 bg-[#93c67c]
-              translate-y-full group-hover/button:translate-y-0
-              transition-transform duration-500 ease-out
-            "
-          />
-        </button>
-      </Link>
+      <div
+        className={`
+          overflow-hidden transition-all duration-500 ease-in-out
+          ${isOpen ? "max-h-40 mt-4 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <p className="text-gray-600 leading-relaxed">{desc}</p>
+      </div>
     </div>
   );
 }
