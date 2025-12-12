@@ -210,7 +210,7 @@ const page = () => {
             <div
               key={stat.id}
               className="
-                border border-yellow-500 p-10 rounded-xl 
+                border border-[#93c67c] hover:cursor-pointer p-10 rounded-xl 
                 flex flex-col items-center justify-center
                 text-white text-center backdrop-blur-sm
                 bg-white/5 transition-all duration-300
