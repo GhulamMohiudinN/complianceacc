@@ -77,7 +77,7 @@ const page = () => {
         </div>
 
         <h3 className="text-xl font-semibold tracking-wide">
-          How we deliver
+          How we deliver ?
         </h3>
 
         <p className="text-lg font-light leading-relaxed">
@@ -98,7 +98,7 @@ const page = () => {
         </div>
 
         <h3 className="text-xl font-semibold tracking-wide">
-          Why us
+          Why us ?
         </h3>
 
         <p className="text-lg font-light leading-relaxed">
@@ -119,7 +119,7 @@ const page = () => {
         </div>
 
         <h3 className="text-xl font-semibold tracking-wide">
-         Who we are
+         Who we are ?
         </h3>
 
         <p className="text-lg font-light leading-relaxed">

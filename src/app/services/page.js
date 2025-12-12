@@ -123,7 +123,7 @@ function ServiceCard({ Icon, title, desc }) {
       </p>
 
       {/* Button */}
-      <Link href="/about" className="inline-block">
+      <Link href="/contact" className="inline-block">
         <button
           className="
             relative overflow-hidden hover:cursor-pointer group/button 
