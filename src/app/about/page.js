@@ -33,9 +33,9 @@ const page = () => {
               <div className="relative h-full flex items-center justify-center px-4">
                 <div className=" max-w-4xl mx-auto">
                   {/* Main Text */}
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white leading-tight tracking-wide">
+                  <h1 className="text-xl text-center sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white leading-tight tracking-wide">
                     <span className="block mb-2">
-                      Compliance Financial Accountants and management consultants
+                      Compliance Accounting Solutions and Management Consultants
                     </span>
                     {/* <span className="block mb-4">Accounting Solutions</span> */}
                     {/* <span className="block"> Discerning Professionals</span> */}

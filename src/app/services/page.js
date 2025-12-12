@@ -21,11 +21,12 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Logo from "@/assists/logo.png";
+import logoB from "@/assists/logo-black.png"
 
 export default function page() {
   return (
     <>
-      <Header />
+      <Header activePage="services"/>
 
       {/* SERVICES SECTION */}
       <section className="py-20 px-6 sm:px-6 lg:px-22 bg-white">
@@ -71,7 +72,7 @@ export default function page() {
           {/* RIGHT SIDE - IMAGE */}
           <div className="w-full flex justify-center">
             <Image 
-              src={Logo} 
+              src={logoB} 
               alt="FAQ Illustration"
               className="rounded-xl shadow-lg w-full max-w-md"
             />
@@ -108,7 +109,7 @@ function ServiceCard({ Icon, title, desc }) {
       "
     >
       {/* Icon */}
-      <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6">
+      <div className="w-16 h-16 bg-[#93c67c] rounded-full flex items-center justify-center mb-6">
         <Icon className="text-white text-3xl" />
       </div>
 
@@ -127,7 +128,7 @@ function ServiceCard({ Icon, title, desc }) {
         <button
           className="
             relative overflow-hidden hover:cursor-pointer group/button 
-            rounded-full border border-gray-700 px-8 py-3 
+            rounded-full border border-gray-700 px-8 py-3 hover:border-[#93c67c]
             bg-white text-sm font-light
           "
         >
@@ -157,7 +158,7 @@ function ServiceCard({ Icon, title, desc }) {
           {/* Background Fill */}
           <span
             className="
-              absolute inset-0 bg-gray-900 
+              absolute inset-0 bg-[#93c67c]
               translate-y-full group-hover/button:translate-y-0
               transition-transform duration-500 ease-out
             "
@@ -212,9 +213,9 @@ function FAQSection() {
             <span className="text-lg font-medium">{item.q}</span>
 
             {active === index ? (
-              <FaMinus className="text-black text-xl" />
+              <FaMinus className="text-[#93c67c] text-xl" />
             ) : (
-              <FaPlus className="text-black text-xl" />
+              <FaPlus className="text-[#93c67c] text-xl" />
             )}
           </button>
 
@@ -366,8 +367,8 @@ function TestimonialSlider() {
         <button
           onClick={prevSlide}
           className="
-            w-12 h-12 bg-black rounded-full flex items-center justify-center 
-            text-white text-lg hover:bg-gray-800 transition-colors duration-300
+            w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center 
+            text-white text-lg hover:bg-[#83c266] transition-colors duration-300
             shadow-md hover:shadow-lg active:scale-95
           "
           aria-label="Previous testimonials"
@@ -383,7 +384,7 @@ function TestimonialSlider() {
               onClick={() => setCurrentIndex(idx)}
               className={`
                 w-3 h-3 rounded-full transition-all duration-300
-                ${currentIndex === idx ? 'bg-black scale-125' : 'bg-gray-300 hover:bg-gray-400'}
+                ${currentIndex === idx ? 'bg-[#93c67c] scale-125' : 'bg-gray-300 hover:bg-gray-400'}
               `}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -394,8 +395,8 @@ function TestimonialSlider() {
         <button
           onClick={nextSlide}
           className="
-            w-12 h-12 bg-black rounded-full flex items-center justify-center 
-            text-white text-lg hover:bg-gray-800 transition-colors duration-300
+            w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center 
+            text-white text-lg hover:bg-[#83c266] transition-colors duration-300
             shadow-md hover:shadow-lg active:scale-95
           "
           aria-label="Next testimonials"

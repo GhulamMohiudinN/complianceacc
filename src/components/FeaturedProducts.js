@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
       id: 2,
       title: "Accounting Services",
       description:
-        "Rigorous auditing services that provide transparent insights into your financial operations, enhancing credibility and stakeholder confidence.",
+        "Accurate bookkeeping, financial reporting, and compliance support to keep your business organized and financially transparent.",
       icon: "🔍",
     },
   ];
@@ -73,7 +73,7 @@ const FeaturedProducts = () => {
     <button
       className="
         relative overflow-hidden hover:cursor-pointer group 
-        rounded-full border border-gray-700 
+        rounded-full border border-black hover:border-[#93c67c] 
         px-8 py-4 
         font-light 
         transition-colors duration-300
@@ -94,7 +94,7 @@ const FeaturedProducts = () => {
       {/* HOVER TEXT (starts below, slides up into center) */}
       <span
         className="
-          absolute inset-0 flex items-center justify-center
+          absolute border-[#93c67c] inset-0 flex items-center justify-center
           text-white
           translate-y-full group-hover:translate-y-0
           transition-transform duration-500 ease-out
@@ -108,7 +108,7 @@ const FeaturedProducts = () => {
       <span
         className="
           absolute inset-0 
-          bg-gray-900 
+          bg-[#93c67c]
           translate-y-full 
           group-hover:translate-y-0 
           transition-transform duration-500 ease-out

@@ -104,7 +104,7 @@ export default function Home() {
     <button
       className="
         relative bg-white hover:cursor-pointer overflow-hidden group 
-        rounded-full border border-gray-700 
+        rounded-full border border-gray-700 hover:border-[#93c67c]
         px-16 py-4 
       "
     >
@@ -135,7 +135,7 @@ export default function Home() {
       {/* Background Fill */}
       <span
         className="
-          absolute inset-0 bg-gray-900 
+          absolute inset-0 bg-[#93c67c]
           translate-y-full group-hover:translate-y-0
           transition-transform duration-500 ease-out
         "
@@ -189,7 +189,7 @@ export default function Home() {
     <button
       className="
         relative overflow-hidden hover:cursor-pointer group 
-        rounded-full border border-gray-700 
+        rounded-full border border-gray-700 hover:border-[#93c67c]
         px-8 py-4 
         font-light 
         transition-colors duration-300
@@ -224,7 +224,7 @@ export default function Home() {
       <span
         className="
           absolute inset-0 
-          bg-gray-900 
+          bg-[#93c67c]
           translate-y-full 
           group-hover:translate-y-0 
           transition-transform duration-500 ease-out
