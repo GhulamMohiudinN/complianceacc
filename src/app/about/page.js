@@ -7,12 +7,15 @@ import Footer from '@/components/Footer';
 import homeHero from "@/assists/homeHero.jpg";
 import { FaCertificate, FaUserCheck, FaDollarSign } from "react-icons/fa";
 import { FaChartSimple } from "react-icons/fa6";
+import deliver from "@/assists/deliver.jpg";
+import who from "@/assists/who.jpg";
+import why from "@/assists/why.jpg";
 
 const page = () => {
 
   const stats = [
-    { id: 1, value: 7, suffix: "+", label: "Years of Experience" },
-    { id: 2, value: 900, suffix: "+", label: "Projects Done" },
+    { id: 1, value: 5, suffix: "+", label: "Years of Experience" },
+    { id: 2, value: 100, suffix: "+", label: "Projects Done" },
     { id: 3, value: 100, suffix: "%", label: "Clients Satisfaction" },
   ];
     const features = [
@@ -126,7 +129,7 @@ const page = () => {
  <div className="space-y-5">
         <div className="relative w-full h-64 overflow-hidden rounded-xl">
           <Image
-            src={about}
+            src={who}
             alt="Strategic Financial Consulting"
             fill
             className="object-cover"
@@ -146,7 +149,7 @@ const page = () => {
       <div className="space-y-5">
         <div className="relative w-full h-64 overflow-hidden rounded-xl">
           <Image
-            src={about}
+            src={why}
             alt="Professional Auditing Services"
             fill
             className="object-cover"
@@ -158,7 +161,7 @@ const page = () => {
         </h3>
 
         <p className="text-lg font-light leading-relaxed">
-          Our auditing methodologies are structured to identify insights,
+          Our methodologies are structured to identify insights,
           elevate compliance, and safeguard your organization’s financial health.
         </p>
       </div>
@@ -167,7 +170,7 @@ const page = () => {
      <div className="space-y-5">
         <div className="relative w-full h-64 overflow-hidden rounded-xl">
           <Image
-            src={about}
+            src={deliver}
             alt="Elite Accounting Experts"
             fill
             className="object-cover"

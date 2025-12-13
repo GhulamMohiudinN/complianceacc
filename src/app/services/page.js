@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
+import {
   FaUserTie,
-  FaBalanceScale, 
+  FaBalanceScale,
   FaRegChartBar,
   FaClipboardCheck,
   FaCalculator,
@@ -15,80 +15,103 @@ import {
   FaPlus,
   FaMinus,
   FaChevronLeft,
-  FaChevronRight
+  FaChevronRight,
 } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Logo from "@/assists/logo.png";
-import logoB from "@/assists/logo-black.png"
+import logoB from "@/assists/logo-black.png";
 
 export default function page() {
   const [openIndex, setOpenIndex] = useState(null);
-
 
   const services = [
     {
       Icon: FaUserTie,
       title: "Business Advisory",
-      desc: "Strategic advisory tailored to improve your organization's direction and financial clarity.",
+      desc: "Strategic goal setting and plan development.",
+      desc2: "Operational process improvement and efficiency.",
+      desc3: "Business risk evaluation and mitigation.",
+      desc4: "Advising market entry, and capital structure.",
     },
     {
       Icon: FaBalanceScale,
       title: "Audit & Assurance",
-      desc: "Precision-driven and assurance ensuring integrity, accuracy, and compliance.",
+      desc: "Independent opinion on fair financial statement presentation.",
+      desc2: "Ensuring adherence to laws, regulations, and policies.",
+      desc3: "Assessing the effectiveness of internal controls.",
+      desc4: "Enhancing financial information credibility for stakeholders.",
     },
     {
       Icon: FaRegChartBar,
       title: "Financial Reporting",
-      desc: "Robust reporting structures that ensure transparency and informed decision-making.",
+      desc: "Producing primary financial statements on standards like IFRS.",
+      desc2: "Developing and consistently applying accounting policies.",
+      desc3: "Preparing and filing required reports with regulators.",
+      desc4: "Defining and calculating key performance indicators (KPIs).",
     },
     {
       Icon: FaClipboardCheck,
       title: "Compliance Management",
-      desc: "Comprehensive compliance frameworks aligned with local and international standards.",
+      desc: "Tracking changes in relevant laws and industry regulations.",
+      desc2: "Implementing internal policies for legal compliance.",
+      desc3: "Timely submission of non-financial regulatory documents.",
+      desc4: "Conducting periodic reviews for adherence to standards.",
     },
     {
       Icon: FaCalculator,
       title: "Accounting Services",
-      desc: "End-to-end accounting solutions designed for accuracy, structure, and operational efficiency.",
+      desc: "Systematically recording daily financial transactions (Bookkeeping)",
+      desc2: "Reconciling internal records with external statements.",
+      desc3: "Managing payroll processing and customer invoicing.",
+      desc4: "Finalizing records for month/quarter/year-end reporting.",
     },
     {
       Icon: FaRegLightbulb,
       title: "Strategy & Consulting",
-      desc: "Tailored consulting programs to help businesses thrive with clarity and long-term vision.",
+      desc: "Assessing business model viability and suggesting adjustments.",
+      desc2: "Financial modeling for major capital projects/investments.",
+      desc3: "Designing systems to link strategy to daily operations (Budgeting).",
+      desc4: " Advising on optimal legal and managerial structure.",
     },
-    {
-      Icon: FaBuilding,
-      title: "Corporate Structuring",
-      desc: "Optimize your corporate structure for financial control, tax efficiency, and scalability.",
-    },
+    // {
+    //   Icon: FaBuilding,
+    //   title: "Corporate Structuring",
+    //   desc: "Optimize your corporate structure for financial control, tax efficiency, and scalability.",
+    //   desc2: "Financial modeling for major capital projects/investments.",
+    //   desc3: "Designing systems to link strategy to daily operations (Budgeting).",
+    //   desc4: " Advising on optimal legal and managerial structure.",
+    // },
     {
       Icon: FaFileInvoiceDollar,
       title: "Taxation Services",
-      desc: "Complete tax planning, filing, and compliance services for companies and individuals.",
+      desc: "Proactive planning for legal tax liability minimization.",
+      desc2: "Preparing and submitting all required tax returns.",
+      desc3: "Determining tax expense and liability for financial reports.",
+      desc4: "Corporate and VAT (value added tax) filing",
     },
     {
       Icon: FaChartPie,
       title: "Financial Analysis",
-      desc: "Data-driven financial evaluations designed to strengthen your decision-making process.",
+      desc: "Examining historical data for performance trends and deviations.",
+      desc2: "Calculating key financial ratios (liquidity, solvency, profitability).",
+      desc3: "Developing forward-looking financial projections and budgets",
+      desc4: "Estimating the economic value (valuation) of a business or asset.",
     },
   ];
- 
-
 
   const toggleCard = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-
   return (
     <>
-      <Header activePage="services"/>
+      <Header activePage="services" />
 
       {/* SERVICES SECTION */}
-       <section className="py-20 px-6 lg:px-22 bg-white">
+      <section className="py-20 px-6 lg:px-22 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-semibold tracking-wide text-center mb-14">
             Our Services
@@ -96,13 +119,15 @@ export default function page() {
 
           {/* Accordion Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-
             {services.map((item, index) => (
               <ServiceCard
                 key={index}
                 Icon={item.Icon}
                 title={item.title}
                 desc={item.desc}
+                desc2={item.desc2}
+                desc3={item.desc3}
+                desc4={item.desc4}
                 isOpen={openIndex === index}
                 onClick={() => toggleCard(index)}
               />
@@ -111,12 +136,9 @@ export default function page() {
         </div>
       </section>
 
-
-
       {/* FAQ SECTION */}
       <section className="py-24 px-6 sm:px-6 lg:px-22 bg-gray-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
           {/* LEFT SIDE - ACCORDION */}
           <div>
             <h2 className="text-3xl lg:text-4xl font-semibold tracking-wide mb-10">
@@ -128,13 +150,12 @@ export default function page() {
 
           {/* RIGHT SIDE - IMAGE */}
           <div className="w-full flex justify-center">
-            <Image 
-              src={logoB} 
+            <Image
+              src={logoB}
               alt="FAQ Illustration"
               className="rounded-xl shadow-lg w-full max-w-md"
             />
           </div>
-
         </div>
       </section>
 
@@ -153,47 +174,46 @@ export default function page() {
   );
 }
 
-
-
 /* ========== REUSABLE CARD COMPONENT ========== */
-function ServiceCard({ Icon, title, desc, isOpen, onClick }) {
+function ServiceCard({ Icon, title, desc, desc2, desc3, desc4, isOpen, onClick }) {
   return (
     <div className="w-full max-w-md mx-auto border border-gray-200 rounded-xl bg-white shadow-sm p-6 transition-all duration-300">
-      {/* Top Row */}
       <button
         onClick={onClick}
-        className="flex items-center justify-between w-full cursor-pointer"
+        className="w-full flex flex-col items-start gap-4"
       >
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center">
-            <Icon className="text-white text-xl" />
-          </div>
-
-          <h3 className="text-lg font-semibold tracking-wide">{title}</h3>
+        {/* Icon (TOP) */}
+        <div className="w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center">
+          <Icon className="text-white text-xl" />
         </div>
 
-        {/* Arrow Icon */}
-        <FaArrowDown
-          className={`text-[#93c67c] text-lg transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+        {/* Title + Arrow (BELOW ICON) */}
+        <div className="w-full mt-6 flex items-center justify-between">
+          <h3 className="text-lg font-semibold tracking-wide">{title}</h3>
+
+          <FaArrowDown
+            className={`text-[#93c67c] text-lg transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </div>
       </button>
 
-      {/* Description */}
+      {/* Description (EXPANDS CARD HEIGHT) */}
       <div
         className={`
-          overflow-hidden transition-all duration-500 ease-in-out
-          ${isOpen ? "max-h-40 mt-4 opacity-100" : "max-h-0 opacity-0"}
-        `}
+      overflow-hidden transition-all duration-500 ease-in-out
+      ${isOpen ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"}
+    `}
       >
-        <p className="text-gray-600 leading-relaxed">{desc}</p>
+        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc}</p>
+        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc2}</p>
+        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc3}</p>
+        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc4}</p>
       </div>
     </div>
   );
 }
-
-
 
 /* ========== FAQ COMPONENT ========== */
 function FAQSection() {
@@ -202,33 +222,30 @@ function FAQSection() {
   const faqList = [
     {
       q: "What services do you provide?",
-      a: "We offer advisory, audit, taxation, accounting, and corporate restructuring solutions designed for long-term growth."
+      a: "We offer advisory, audit, taxation, accounting, and corporate restructuring solutions designed for long-term growth.",
     },
     {
       q: "How does your consultation process work?",
-      a: "We begin with a discovery call, followed by a structured evaluation and tailored recommendations."
+      a: "We begin with a discovery call, followed by a structured evaluation and tailored recommendations.",
     },
     {
       q: "Do you provide tax planning for companies?",
-      a: "Yes, we offer complete tax consulting, filing, planning, and compliance for businesses and individuals."
+      a: "Yes, we offer complete tax consulting, filing, planning, and compliance for businesses and individuals.",
     },
     {
       q: "Can you help with corporate structuring?",
-      a: "Absolutely. We help design and optimize corporate structures for maximum operational and financial efficiency."
+      a: "Absolutely. We help design and optimize corporate structures for maximum operational and financial efficiency.",
     },
     {
       q: "Do you work with startups and small businesses?",
-      a: "Yes. Our services are fully scalable and designed to support startups as well as established enterprises."
+      a: "Yes. Our services are fully scalable and designed to support startups as well as established enterprises.",
     },
   ];
 
   return (
     <div className="space-y-6">
       {faqList.map((item, index) => (
-        <div
-          key={index}
-          className="border-b border-gray-300 pb-4"
-        >
+        <div key={index} className="border-b border-gray-300 pb-4">
           {/* Question Row */}
           <button
             onClick={() => setActive(active === index ? null : index)}
@@ -339,7 +356,10 @@ function TestimonialSlider() {
 
   // Calculate visible testimonials for current slide
   const startIndex = currentIndex * itemsPerView;
-  const visibleTestimonials = testimonials.slice(startIndex, startIndex + itemsPerView);
+  const visibleTestimonials = testimonials.slice(
+    startIndex,
+    startIndex + itemsPerView
+  );
 
   // Ensure we have exactly itemsPerView items (pad with empty if needed)
   while (visibleTestimonials.length < itemsPerView) {
@@ -347,7 +367,7 @@ function TestimonialSlider() {
       name: "",
       role: "",
       review: "",
-      isEmpty: true
+      isEmpty: true,
     });
   }
 
@@ -355,7 +375,7 @@ function TestimonialSlider() {
     <div className="relative px-4 md:px-0">
       {/* Testimonials Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {visibleTestimonials.map((item, idx) => (
+        {visibleTestimonials.map((item, idx) =>
           !item.isEmpty ? (
             <div
               key={`${startIndex + idx}`}
@@ -375,14 +395,16 @@ function TestimonialSlider() {
 
               {/* Client Info */}
               <div className="border-t border-gray-100 pt-6">
-                <h4 className="text-lg font-semibold text-gray-900">{item.name}</h4>
+                <h4 className="text-lg font-semibold text-gray-900">
+                  {item.name}
+                </h4>
                 <p className="text-gray-500 text-sm">{item.role}</p>
               </div>
             </div>
           ) : (
             <div key={`empty-${idx}`} className="hidden lg:block"></div>
           )
-        ))}
+        )}
       </div>
 
       {/* Navigation Controls */}
@@ -408,7 +430,11 @@ function TestimonialSlider() {
               onClick={() => setCurrentIndex(idx)}
               className={`
                 w-3 h-3 rounded-full transition-all duration-300
-                ${currentIndex === idx ? 'bg-[#93c67c] scale-125' : 'bg-gray-300 hover:bg-gray-400'}
+                ${
+                  currentIndex === idx
+                    ? "bg-[#93c67c] scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }
               `}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -431,7 +457,8 @@ function TestimonialSlider() {
 
       {/* Slide Counter (Optional) */}
       <div className="text-center mt-6 text-gray-500 text-sm">
-        <span className="font-medium">{currentIndex + 1}</span> / <span>{totalSlides}</span>
+        <span className="font-medium">{currentIndex + 1}</span> /{" "}
+        <span>{totalSlides}</span>
       </div>
     </div>
   );

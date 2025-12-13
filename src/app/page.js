@@ -6,6 +6,7 @@ import Image from "next/image";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { FaEnvelope, FaPhoneAlt, FaClock } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -14,6 +15,28 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
+        {/* Top Left Contact Info */}
+<div className="absolute top-6 left-6 z-20">
+  <div className="flex flex-col gap-3 text-white text-sm font-light">
+    
+    <div className="flex items-center gap-2">
+      <FaEnvelope className="text-[#93c67c]" />
+      <span>info@yourcompany.com</span>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <FaPhoneAlt className="text-[#93c67c]" />
+      <span>+1 234 567 890</span>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <FaClock className="text-[#93c67c]" />
+      <span>24/7 Service</span>
+    </div>
+
+  </div>
+</div>
+
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <Image
