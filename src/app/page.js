@@ -17,21 +17,21 @@ export default function Home() {
       <div className="relative w-full h-screen overflow-hidden">
         {/* Top Left Contact Info */}
 <div className="absolute top-6 left-6 z-20">
-  <div className="flex flex-col gap-3 text-white text-sm font-light">
+  <div className="flex  gap-3 text-white text-sm font-light">
     
     <div className="flex items-center gap-2">
-      <FaEnvelope className="text-[#93c67c]" />
-      <span>info@yourcompany.com</span>
+      <FaEnvelope className="text-white" />
+      <span className="text-white">info@yourcompany.com</span>
     </div>
 
     <div className="flex items-center gap-2">
-      <FaPhoneAlt className="text-[#93c67c]" />
-      <span>+1 234 567 890</span>
+      <FaPhoneAlt className="text-white" />
+      <span className="text-white">+1 234 567 890</span>
     </div>
 
     <div className="flex items-center gap-2">
-      <FaClock className="text-[#93c67c]" />
-      <span>24/7 Service</span>
+      <FaClock className="text-white" />
+      <span className="text-white">24/7 Service</span>
     </div>
 
   </div>

@@ -18,8 +18,10 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa";
-
+import { HiMinusSm } from "react-icons/hi";
+import { IoIosArrowDropdown } from "react-icons/io";
+import { FaDotCircle } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import logoB from "@/assists/logo-black.png";
@@ -177,43 +179,48 @@ export default function page() {
 /* ========== REUSABLE CARD COMPONENT ========== */
 function ServiceCard({ Icon, title, desc, desc2, desc3, desc4, isOpen, onClick }) {
   return (
-    <div className="w-full max-w-md mx-auto border border-gray-200 rounded-xl bg-white shadow-sm p-6 transition-all duration-300">
-      <button
-        onClick={onClick}
-        className="w-full flex flex-col items-start gap-4"
-      >
-        {/* Icon (TOP) */}
-        <div className="w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center">
-          <Icon className="text-white text-xl" />
-        </div>
+    <div className="w-full hover:cursor-pointer max-w-md mx-auto border border-gray-200 rounded-xl bg-white shadow-sm p-6 transition-all duration-300">
+  <button
+    onClick={onClick}
+    className="w-full flex  hover:cursor-pointer items-center gap-4"
+  >
+    {/* Icon */}
+    <div className="w-12 h-12 bg-[#93c67c] rounded-full flex items-center justify-center flex-shrink-0">
+      <Icon className="text-white text-xl" />
+    </div>
 
-        {/* Title + Arrow (BELOW ICON) */}
-        <div className="w-full mt-6 flex items-center justify-between">
-          <h3 className="text-lg font-semibold tracking-wide">{title}</h3>
+    {/* Title + Arrow */}
+    <div className="flex items-center justify-between w-full px-2">
+      <h3 className="text-lg font-semibold tracking-wide">
+        {title}
+      </h3>
 
-          <FaArrowDown
-            className={`text-[#93c67c] text-lg transition-transform duration-300 ${
-              isOpen ? "rotate-180" : ""
-            }`}
-          />
-        </div>
-      </button>
+      <IoIosArrowDown 
+        className={`text-[#93c67c] 0  text-lg transition-transform duration-300 ${
+          isOpen ? "rotate-180" : ""
+        }`}
+      />
+    </div>
+  </button>
 
-      {/* Description (EXPANDS CARD HEIGHT) */}
-      <div
-        className={`
+  {/* Description */}
+  <div
+    className={`
       overflow-hidden transition-all duration-500 ease-in-out
       ${isOpen ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"}
     `}
-      >
-        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc}</p>
-        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc2}</p>
-        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc3}</p>
-        <p className="text-gray-600 flex gap-2 items-center leading-relaxed"><span className="text-[#93c67c]"><FaArrowCircleRight /></span> {desc4}</p>
-      </div>
-    </div>
+  >
+    <p className="text-gray-600 flex gap-2  leading-relaxed"><span className="text-[#93c67c] mt-2"><HiMinusSm /></span> {desc}</p>
+        <p className="text-gray-600 flex gap-2 leading-relaxed"><span className="text-[#93c67c] mt-2"><HiMinusSm /></span> {desc2}</p>
+        <p className="text-gray-600 flex gap-2  leading-relaxed"><span className="text-[#93c67c] mt-2"><HiMinusSm /></span> {desc3}</p>
+        <p className="text-gray-600 flex gap-2  leading-relaxed"><span className="text-[#93c67c] mt-2"><HiMinusSm /></span> {desc4}</p> 
+  </div>
+</div>
+
   );
 }
+
+
 
 /* ========== FAQ COMPONENT ========== */
 function FAQSection() {
