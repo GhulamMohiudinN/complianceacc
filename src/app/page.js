@@ -21,12 +21,12 @@ export default function Home() {
     
     <div className="flex items-center gap-2">
       <FaEnvelope className="text-white" />
-      <span className="text-white">info@yourcompany.com</span>
+      <span className="text-white">contact@complianceaccountants.com</span>
     </div>
 
     <div className="flex items-center gap-2">
       <FaPhoneAlt className="text-white" />
-      <span className="text-white">+1 234 567 890</span>
+      <span className="text-white">+97 1501232155</span>
     </div>
 
     <div className="flex items-center gap-2">
@@ -119,7 +119,7 @@ export default function Home() {
 
            <div className="pt-8">
   <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=mohiudin7174@gmail.com"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@complianceaccountants.com"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block"
